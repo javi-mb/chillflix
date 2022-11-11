@@ -38,14 +38,14 @@ const Movie = () => {
       {movie ? (
         <div className="w-full h-screen">
           <div className="absolute w-full h-full bg-gradient-to-r from-[#19191a] to-[#19191a]/30"></div>
-          <div className="absolute w-full h-full bg-gradient-to-t from-[#19191a]"></div>
+          <div className="absolute w-full min-h-screen bg-gradient-to-t from-[#19191a]"></div>
           <img
-            className="md:max-h-screen w-full min-h-screen object-cover"
+            className="md:h-full w-full h-full object-cover"
             src={`${IMG_URL}${movie?.backdrop_path}`}
           />
-          <div className="absolute top-36 left-5 md:top-32 md:left-20 flex gap-10 md:w-1/2">
+          <div className="absolute top-36 left-5 md:top-32 md:left-20 flex gap-5 md:gap-10 md:w-1/2 flex-col-reverse md:flex-row">
             <img
-              className="max-h-[280px] max-w-[200px] rounded border-white border-2 hidden md:inline"
+              className="max-h-[280px] max-w-[200px] rounded border-white border-2 relative left-20 md:left-0"
               src={`${IMG_URL}${movie?.poster_path}`}
             />
             <div className="flex flex-col gap-5">
@@ -56,7 +56,7 @@ const Movie = () => {
             </div>
           </div>
 
-          <div className="absolute bottom-20 left-20">
+          <div className="absolute bottom-12 left-8 md:left-20">
             {providers && providers.length ? (
               <>
                 <h2 className="text-white font-bold text-xl">See now</h2>
